@@ -40,7 +40,7 @@ $(document).ready(function() {
 
         $.ajax({
           type: "POST",
-          url: "http://localhost:8080/go",
+          url: "http://34.238.45.61:8080/go",
           data: JSON.stringify(inputData),
           dataType: "json",
         }).always(function(response) {
