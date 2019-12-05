@@ -56,8 +56,8 @@ $(document).ready(function() {
 });
 
 function updateSliderProb(event, ui) {
-  value = (ui.value / 100).toFixed(2)
-  $("#" + ui.handle.parentNode.id + "-val").text(value)
+  value = Math.round(ui.value)
+  $("#" + ui.handle.parentNode.id + "-val").text(value + '%')
 }
 
 function updateSliderMultiProb(event, ui) {
@@ -65,11 +65,11 @@ function updateSliderMultiProb(event, ui) {
   value1 = ui.values[1] - value0
   value2 = 100 - value0 - value1
 
-  value0 = (value0 / 100).toFixed(2)
-  value1 = (value1 / 100).toFixed(2)
-  value2 = (value2 / 100).toFixed(2)
+  value0 = Math.round(value0)
+  value1 = Math.round(value1)
+  value2 = Math.round(value2)
 
-  $('#' + ui.handle.parentNode.id + "-val").text(value0 + " acid drops, " + value1 + " 20% sugar, " + value2 + " 25% sugar")
+  $('#' + ui.handle.parentNode.id + "-val").text(value0 + "% chance of acid dropping, " + value1 + "% chance of 20% sugar, " + value2 + "% chance of 25% sugar")
 }
 
 function updateSliderMoney(event, ui) {
